@@ -1,5 +1,3 @@
-#CAN YOU SEE THIS????
-
 """
 Django settings for MovieStore project.
 
@@ -38,6 +36,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.admin',
+    'home'
 ]
 
 MIDDLEWARE = [
