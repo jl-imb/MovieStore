@@ -1,0 +1,3 @@
+# ignore pycache files for merges
+__pycache__/
+*.pyc
