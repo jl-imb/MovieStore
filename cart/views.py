@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.shortcuts import get_object_or_404, redirect
-from movies.models import Movie, Review
+from movies.models import Movie
 from .utils import calculate_cart_total
 from .models import Order, Item
 from django.contrib.auth.decorators import login_required
@@ -56,16 +56,3 @@ def purchase(request):
     template_data['order_id'] = order.id
     return render(request, 'cart/purchase.html',
                   {'template_data': template_data})
-
-@login_required
-def create_review(request, id):
-    if request.method == 'POST' and request.POST['comment'] != '':
-        movie = Movie.objects.get(id=id)
-        review = Review()
-        review.comment = request.POST['comment']
-        review.movie = movie
-        review.user = request.user
-        review.save()
-        return redirect('movies.show', id=id)
-    else:
-        return redirect('movies.show', id=id)
