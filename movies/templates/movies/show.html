@@ -33,8 +33,7 @@
                   <b class="text-start">Create a review
                     </b><br /><br />
                   <form method="POST" action=
-                    "{% url 'movies.create_review'
-                    id=template_data.movie.id %}">
+                    "{% url 'movies.create_review' id=template_data.movie.id %}">
                     {% csrf_token %}
                     <p>
                       <label for="comment">Comment:</label>
