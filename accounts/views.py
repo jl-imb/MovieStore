@@ -8,7 +8,7 @@ from django.urls import reverse_lazy
 from django.contrib.auth.views import PasswordResetView
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib import messages
-#from django.contrib.auth.models import User
+from django.contrib.auth.models import User
 
 @login_required
 def logout(request):
