@@ -1,18 +1,97 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block content %}
-<header class="masthead bg-index text-white text-center py-4">
-  <div class="container d-flex align-items-center flex-column pt-2">
-    <h2>Movies Store</h2>
-    <p>Your Ticket to Unlimited Entertainment!</p>
-  </div>
-</header>
-<div class="p-3">
-  <div class="container">
-    <div class="row mt-3">
-      <div class="col mx-auto text-center mb-3">
-        <h4>Welcome to the best movie store!!</h4>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <header class="masthead bg-index text-white text-center py-4">
+    <style>
+    .wrapper {
+      border: none;
+      width: 90%;
+      max-width: 1700px;
+      margin-inline: auto;
+      position: relative;
+      height: 220px;
+      margin-top: 4rem;
+      overflow: hidden;
+      mask-image: linear-gradient(
+        to right,
+        rgba(0,0,0,0),
+        rgba(0,0,0,1) 20%,
+        rgba(0,0,0,1) 80%,
+        rgba(0,0,0,0)
+      );
+    }
+    @keyframes scrollLeft {
+        to {
+            left: -200px;
+        }
+    }
+    .item {
+      width: 160px;
+      height: 220px;
+      border-radius: 4px;
+      position: absolute;
+      left: max(calc(160px * 7), 100%);
+      animation-name: scrollLeft;
+      animation-duration: 15s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .item1 {
+        animation-delay: calc(15s/ 7 * (7 - 1) * -1);
+        background-image: url('/media/movie_images/avatar.jpg');
+    }
+    .item2 {
+        animation-delay: calc(15s/ 7 * (7 - 2) * -1);
+        background-image: url('/media/movie_images/madagascar.jpg');
+    }
+    .item3 {
+        animation-delay: calc(15s/ 7 * (7 - 3) * -1);
+        background-image: url('/media/movie_images/titanic.jpg');
+    }
+    .item4 {
+        animation-delay: calc(15s/ 7 * (7 - 4) * -1);
+        background-image: url('/media/movie_images/darkknight.jpg');
+    }
+    .item5 {
+        animation-delay: calc(15s/ 7 * (7 - 5) * -1);
+        background-image: url('/media/movie_images/endgame.jpg');
+    }
+    .item6 {
+        animation-delay: calc(15s/ 7 * (7 - 6) * -1);
+        background-image: url('/media/movie_images/inception.jpg');
+    }
+    .item7 {
+        animation-delay: calc(15s/ 7 * (7 - 7) * -1);
+        background-image: url('/media/movie_images/lionking_liveaction.jpg');
+    }
+  </style>
+
+        <div class="container d-flex align-items-center flex-column pt-2">
+        <h2>Movies Store</h2>
+        <p>Your Ticket to Unlimited Entertainment!</p>
+      </div>
+    </header>
+    <div class="p-3">
+      <div class="container">
+        <div class="row mt-3">
+          <div class="col mx-auto text-center mb-3">
+            <h4>Welcome to the best movie store!!</h4>
+              <div class="wrapper">
+                <div class="item item1"></div>
+                <div class="item item2"></div>
+                <div class="item item3"></div>
+                <div class="item item4"></div>
+                <div class="item item5"></div>
+                <div class="item item6"></div>
+                <div class="item item7"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
+
 {% endblock content %}
